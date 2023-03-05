@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PokerHand\PokerHand.csproj" />
+  </ItemGroup>
+
 </Project>
