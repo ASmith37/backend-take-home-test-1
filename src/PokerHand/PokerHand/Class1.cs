@@ -42,6 +42,7 @@ namespace PokerHand
 
         public Card(string cardInfo)
         {
+            // Converts a string representation of a card (e.g. "4C", "KD", "10S") into a Card object
             var suitDictionary = new Dictionary<string, Suit>() { { "C", Suit.Clubs }, { "D", Suit.Diamonds }, { "H", Suit.Hearts }, { "S", Suit.Spades } };
             var valueDictionary = new Dictionary<string, Value>()
             {
@@ -79,6 +80,7 @@ namespace PokerHand
 
         public Hand(string cardListString)
         {
+            // Converts a string representation of a hand (e.g. "2H 3D 5S 9C KD") into a Hand object
             this.Cards = cardListString.Split(' ').Select(cardString => new Card(cardString)).ToList();
         }
         public int CompareTo(IHand other)
@@ -119,6 +121,7 @@ namespace PokerHand
 
         public PokerHand(string cardInfo) : base(cardInfo)
         {
+            // Example input: "2H 3D 5S 9C KD"
             if (this.Cards.Count != 5)
                 throw new ArgumentException("A poker hand must contain 5 cards.");
             Cards.Sort();
